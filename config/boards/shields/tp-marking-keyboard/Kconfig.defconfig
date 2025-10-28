@@ -1,0 +1,6 @@
+if SHIELD_TP_MARKING_KEYBOARD
+
+config ZMK_KEYBOARD_NAME
+  default "TP Keyboard"
+
+endif
