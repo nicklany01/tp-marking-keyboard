@@ -205,11 +205,20 @@ macros {
     };
   };
  
+  behaviors {
+    vol_encoder: vol_encoder {
+      compatible = "zmk,behavior-sensor-rotate";
+      #sensor-binding-cells = <0>;
+      bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
     default_layer {
       label = "Numpad";
+      sensor-bindings = <&vol_encoder>;
       bindings = <
         &kp N7 &kp N8 &kp N9 &pass &kp C_MUTE
         &kp N4 &kp N5 &kp N6 &fail
@@ -220,6 +229,7 @@ macros {
     
     layer_1 {
       label = "Navigation";
+      sensor-bindings = <&vol_encoder>;
       bindings = <
         &kp HOME &kp UP &kp END &none &trans
         &kp LEFT &kp DOWN &kp RIGHT &none
@@ -230,6 +240,7 @@ macros {
     
     layer_2_1 {
       label = "Markers Page 1";
+      sensor-bindings = <&vol_encoder>;
       bindings = <
         &aidan &daniella &leo &none &trans
         &matt &chris &baig &none
@@ -240,6 +251,7 @@ macros {
 
     layer_2_2 {
       label = "Markers Page 2";
+      sensor-bindings = <&vol_encoder>;
       bindings = <
         &none &none &none &none &trans
         &rachel &none &none &none
@@ -250,6 +262,7 @@ macros {
 
     layer_4 {
       label = "Extra Symbols";
+      sensor-bindings = <&vol_encoder>;
       bindings = <
         &none &none &none &none &trans
         &none &none &none &none

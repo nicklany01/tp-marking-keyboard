@@ -39,8 +39,6 @@
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
 };
-
-
 / {
   chosen {
     zmk,kscan = &default_kscan;
@@ -85,6 +83,20 @@
     led_power: led_power {
       gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
     };
+  };
+  
+  encoder: encoder {
+    compatible = "alps,ec11";
+    a-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <20>;
+    status = "okay";
+  };
+
+  sensors: sensors {
+    compatible = "zmk,keymap-sensors";
+    sensors = <&encoder>;
+    triggers-per-rotation = <20>;
   };
 };
 
