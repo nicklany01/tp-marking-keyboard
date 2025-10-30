@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-  macros {
+macros {
     pass: pass {
       compatible = "zmk,behavior-macro";
       label = "pass";
@@ -26,53 +26,245 @@
         <&kp LS(I)>,
         <&kp LS(L)>;
     };
+
+    not_yet_marked: not_yet_marked {
+      compatible = "zmk,behavior-macro";
+      label = "not_yet_marked";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(N)>, <&kp O>, <&kp T>, <&kp SPACE>,
+        <&kp Y>, <&kp E>, <&kp T>, <&kp SPACE>,
+        <&kp M>, <&kp A>, <&kp R>, <&kp K>, <&kp E>, <&kp D>;
+    };
+
+    nick: nick {
+      compatible = "zmk,behavior-macro";
+      label = "nick";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(N)>,
+        <&kp I>,
+        <&kp C>,
+        <&kp K>;
+    };
+
+    matt: matt {
+      compatible = "zmk,behavior-macro";
+      label = "matt";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(M)>,
+        <&kp A>,
+        <&kp T>,
+        <&kp T>;
+    };
+
+    jeremy: jeremy {
+      compatible = "zmk,behavior-macro";
+      label = "jeremy";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(J)>,
+        <&kp E>,
+        <&kp R>,
+        <&kp E>,
+        <&kp M>,
+        <&kp Y>;
+    };
+
+    jari: jari {
+      compatible = "zmk,behavior-macro";
+      label = "jari";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(J)>,
+        <&kp A>,
+        <&kp R>,
+        <&kp I>;
+    };
+
+    karl: karl {
+      compatible = "zmk,behavior-macro";
+      label = "karl";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(K)>,
+        <&kp A>,
+        <&kp R>,
+        <&kp L>;
+    };
+
+    daniella: daniella {
+      compatible = "zmk,behavior-macro";
+      label = "daniella";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(D)>,
+        <&kp A>,
+        <&kp N>,
+        <&kp I>,
+        <&kp E>,
+        <&kp L>,
+        <&kp L>,
+        <&kp A>;
+    };
+
+    chris: chris {
+      compatible = "zmk,behavior-macro";
+      label = "chris";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(C)>,
+        <&kp H>,
+        <&kp R>,
+        <&kp I>,
+        <&kp S>;
+    };
+
+    ethan: ethan {
+      compatible = "zmk,behavior-macro";
+      label = "ethan";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(E)>,
+        <&kp T>,
+        <&kp H>,
+        <&kp A>,
+        <&kp N>,
+        <&kp SPACE>,
+        <&kp N>;
+    };
+
+    leo: leo {
+      compatible = "zmk,behavior-macro";
+      label = "leo";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(L)>,
+        <&kp E>,
+        <&kp O>;
+    };
+
+    alex: alex {
+      compatible = "zmk,behavior-macro";
+      label = "alex";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(A)>,
+        <&kp L>,
+        <&kp E>,
+        <&kp X>;
+    };
+
+    aidan: aidan {
+      compatible = "zmk,behavior-macro";
+      label = "aidan";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(A)>,
+        <&kp I>,
+        <&kp D>,
+        <&kp A>,
+        <&kp N>;
+    };
+
+    baig: baig {
+      compatible = "zmk,behavior-macro";
+      label = "baig";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(B)>,
+        <&kp A>,
+        <&kp I>,
+        <&kp G>;
+    };
+
+    steph: steph {
+      compatible = "zmk,behavior-macro";
+      label = "steph";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(S)>,
+        <&kp T>,
+        <&kp E>,
+        <&kp P>,
+        <&kp H>;
+    };
+
+    rachel: rachel {
+      compatible = "zmk,behavior-macro";
+      label = "rachel";
+      #binding-cells = <0>;
+      bindings = 
+        <&kp LS(R)>,
+        <&kp A>,
+        <&kp C>,
+        <&kp H>,
+        <&kp E>,
+        <&kp L>;
+    };
   };
  
   keymap {
     compatible = "zmk,keymap";
 
     default_layer {
+      label = "Numpad";
       bindings = <
         &kp N7 &kp N8 &kp N9 &pass &kp C_MUTE
         &kp N4 &kp N5 &kp N6 &fail
         &kp N1 &kp N2 &kp N3 &mo 1 &mo 2
-        &kp N0 &kp BACKSPACE &kp KP_ENTER &mo 3 &mo 4
+        &kp N0 &kp BACKSPACE &kp KP_ENTER &mo 4 &mo 5
       >;
     };
     
     layer_1 {
+      label = "Navigation";
       bindings = <
         &kp HOME &kp UP &kp END &none &trans
         &kp LEFT &kp DOWN &kp RIGHT &none
-        &none &none &none &none &none
+        &none &none &none &none &mo 3
         &none &none &none &none &none
       >;
     };
     
-    layer_2 {
+    layer_2_1 {
+      label = "Markers Page 1";
       bindings = <
-        &none &none &none &none &trans
-        &none &none &none &none
-        &none &none &none &none &none
-        &none &none &none &none &none
+        &aidan &daniella &leo &none &trans
+        &matt &chris &baig &none
+        &jeremy &jari &karl &mo 3 &none
+        &nick &trans &trans &none &none
       >;
     };
 
-    layer_3 {
+    layer_2_2 {
+      label = "Markers Page 2";
+      bindings = <
+        &none &none &none &none &trans
+        &rachel &none &none &none
+        &ethan &alex &steph &none &none
+        &not_yet_marked &trans &trans &none &none
+      >;
+    };
+
+    layer_4 {
+      label = "Extra Symbols";
       bindings = <
         &none &none &none &none &trans
         &none &none &none &none
-        &none &none &none &none &none
-        &none &none &none &none &none
+        &kp DOT &none &none &none &none
+        &none &trans &trans &none &none
       >;
     };
     
-    layer_4 {
+    layer_5 {
+      label = "Bluetooth Control";
       bindings = <
-        &none &none &none &none &trans
-        &none &none &none &none
-        &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none
+        &bt BT_CLR &none &none &none &bt BT_CLR_ALL
+        &bt BT_SEL 3 &bt BT_SEL 4 &none &none
         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none &none
+        &none &trans &trans &none &none
       >;
     };
   };
